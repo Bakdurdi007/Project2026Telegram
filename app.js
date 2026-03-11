@@ -1,3 +1,21 @@
+const tg = window.Telegram.WebApp;
+
+// Oynani maksimal kengaytirish
+tg.expand();
+
+// Muhim: Telegram Desktop ba'zan tayyor bo'lishini kutadi
+tg.ready();
+
+// Kompyuter versiyasi uchun qo'shimcha "zarba"
+if (tg.platform === 'tdesktop' || tg.platform === 'macos') {
+    // Agar dastur ruxsat bersa, to'liq ekran so'raymiz
+    if (tg.requestFullscreen) {
+        tg.requestFullscreen();
+    }
+}
+
+
+
 // Telegram Web App obyektini chaqirib olish
 const tg = window.Telegram.WebApp;
 

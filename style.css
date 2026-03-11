@@ -55,12 +55,23 @@ body {
 
 /* 3. KOMPYUTERLAR UCHUN (Ekran 1024px dan kattalashganda) */
 @media screen and (min-width: 1024px) {
-    .container {
-        max-width: 1200px;
-        margin: 0 auto; /* O'rtaga joylashtirish */
-        flex-wrap: nowrap; /* Barchasi bir qatorda joylashadi */
+    body {
+        /* Fon butun oyna bo'ylab yoyilishi uchun */
+        width: 100vw;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
     }
+
+    .container {
+        /* Kichik markazlashgan qutini emas, butun kenglikni egallash */
+        width: 95% !important;
+        max-width: none !important;
+        margin: 0 auto;
+        flex-direction: row; /* Elementlar yonma-yon bo'lishi uchun */
+    }
+
     .card {
-        flex: 1; /* Bir xil o'lchamda 3 ta ustun */
+        flex: 1; /* Kartochkalar teng masofada kengayadi */
     }
 }
