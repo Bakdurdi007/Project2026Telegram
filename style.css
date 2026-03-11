@@ -1,0 +1,66 @@
+/* Barcha elementlar uchun umumiy qoidalar */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: sans-serif;
+    /* Telegram mavzusiga moslashish (kunduzgi/tungi rejim) */
+    background-color: var(--tg-theme-bg-color, #f4f4f9);
+    color: var(--tg-theme-text-color, #333333);
+}
+
+.header {
+    text-align: center;
+    padding: 20px;
+    background-color: var(--tg-theme-button-color, #0088cc);
+    color: var(--tg-theme-button-text-color, #ffffff);
+}
+
+.header p {
+    margin-top: 10px;
+    font-size: 14px;
+}
+
+/* 1. MOBIL QURILMALAR UCHUN (Default holat) */
+.container {
+    display: flex;
+    flex-direction: column; /* Elementlar ustma-ust tushadi */
+    gap: 15px;
+    padding: 20px;
+}
+
+.card {
+    background-color: var(--tg-theme-secondary-bg-color, #ffffff);
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    text-align: center;
+}
+
+/* 2. PLANSHETLAR UCHUN (Ekran 768px dan kattalashganda) */
+@media screen and (min-width: 768px) {
+    .container {
+        flex-direction: row; /* Elementlar yonma-yon tushadi */
+        flex-wrap: wrap; /* Sig'masa pastga tushadi */
+        justify-content: center;
+    }
+    .card {
+        flex: 1 1 calc(50% - 20px); /* Ikkita ustun bo'lib qoladi */
+        max-width: 400px;
+    }
+}
+
+/* 3. KOMPYUTERLAR UCHUN (Ekran 1024px dan kattalashganda) */
+@media screen and (min-width: 1024px) {
+    .container {
+        max-width: 1200px;
+        margin: 0 auto; /* O'rtaga joylashtirish */
+        flex-wrap: nowrap; /* Barchasi bir qatorda joylashadi */
+    }
+    .card {
+        flex: 1; /* Bir xil o'lchamda 3 ta ustun */
+    }
+}
